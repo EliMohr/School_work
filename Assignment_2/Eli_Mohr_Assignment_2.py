@@ -1,2 +1,2 @@
-print("Hellow, World!")
+print("Eli Mohr, Assignment 2")
 
