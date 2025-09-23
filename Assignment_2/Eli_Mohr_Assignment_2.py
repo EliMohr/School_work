@@ -1,13 +1,13 @@
 print("Eli Mohr, Assignment 2")
 
-#Learning loops
+#Learning loops\/
 
-#fruits has a list that contains three strings
+#fruits has a list that contains three strings\/
 
-#fruits = ["apple", "banana", "cherry"]
+fruits = ["apple", "banana", "cherry"]
 
-#so this line of code is saying for each fruit in the list of fruits, print the fruit
+#so this line of code is saying for each fruit in the list of fruits, print the fruit\/
 
-#for fruit in fruits:
+for fruit in fruits:
 
-#  print(fruit)
+  print(fruit)
