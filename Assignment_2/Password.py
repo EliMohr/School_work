@@ -5,9 +5,9 @@ import time
 #\/this is saying what the password is.
 validPassword = "PythonPass123"
 #\/this is how many chances the user has before the countdown starts.
-maxTries = 3
+maxTries = 6
 #\/this is how many seconds to count down once the user runs out of tries.
-countdownSeconds = 5
+countdownSeconds = 60
 #\/this is asking the user to input their password.
 enteredPassword = input("Enter your password: ")
 #\/this is setting a counter for how many times the user has tried to enter the password.
@@ -21,10 +21,10 @@ while (validPassword != enteredPassword):
         print("Too many failed attempts.")
         #\/this counts down before closing the program.
         for secondsLeft in range(countdownSeconds, 0, -1):
-            print(f"Closing in {secondsLeft} seconds...")
+            print(f"Locked for {secondsLeft} seconds...")
             time.sleep(1)
         print("Access denied")
-        exit()
+        tryCount = 1
 #\/this is checking if the user has entered the correct password.
 if enteredPassword == validPassword:
     print("Access granted")

@@ -1,7 +1,6 @@
 #Eli Mohr Assignmnet 2
 #\/this imports the time module so we can pause the program.
 import time
-
 #\/this is saying what the password is.
 validPassword = "PythonPass123"
 #\/this is how many chances the user has before the countdown starts.
@@ -15,16 +14,17 @@ tryCount = 0
 #\/this is a while loop that will keep asking the user to enter their password until they enter the correct one or exceed the number of tries.
 while (validPassword != enteredPassword):
     print("Incorrect password, try again.")
-    enteredPassword = input("Enter your password: ")
     tryCount += 1
     if tryCount >= maxTries:
         print("Too many failed attempts.")
         #\/this counts down before closing the program.
         for secondsLeft in range(countdownSeconds, 0, -1):
-            print(f"Closing in {secondsLeft} seconds...")
+            print(f"Locked for {secondsLeft} seconds...")
             time.sleep(1)
         print("Access denied")
-        exit()
+        print("Restarting password check.")
+        tryCount = 0
+    enteredPassword = input("Enter your password: ")
 #\/this is checking if the user has entered the correct password.
 if enteredPassword == validPassword:
     print("Access granted")
