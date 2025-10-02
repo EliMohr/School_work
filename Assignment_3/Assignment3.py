@@ -3,11 +3,25 @@
 import time
 
 #\/this is saying what the password is.
-validPassword = "PythonPass123"
+validPassword = "JimmyJohns123"
+
+#encrypts the password
+def passwordEncrypt(password):
+    import string
+    alphabet = string.ascii_lowercase + " "
+    alphabetList = []
+    for character in alphabet:
+        alphabetList.append(character)
+    print(password.replace(alphabetList[12], alphabetList[13]))
+
+passwordEncrypt(validPassword)
+        
+
+
 #\/this is how many chances the user has before the countdown starts.
 maxTries = 6
 #\/this is how many seconds to count down once the user runs out of tries.
-countdownSeconds = 60
+countdownSeconds = 3
 #\/this is asking the user to input their password.
 enteredPassword = input("Enter your password: ")
 #\/this is setting a counter for how many times the user has tried to enter the password.
