@@ -23,7 +23,7 @@ while (validPassword != enteredPassword):
             time.sleep(1)
         print("Access denied")
         print("Restarting password check.")
-        tryCount = 0
+        tryCount = 1
     enteredPassword = input("Enter your password: ")
 #\/this is checking if the user has entered the correct password.
 if enteredPassword == validPassword:
