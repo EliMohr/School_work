@@ -1,7 +1,7 @@
 #Eli Mohr Assignment 3
 #\/this imports the time module so we can pause the program.
 import time
-
+import os
 #\/this is saying what the password is.
 #validPassword = "JimmyJohns123"
 
@@ -17,6 +17,7 @@ def passwordEncrypt(password):
 NewPassword = input("Enter a new password: ")
 validPassword = NewPassword
 passwordEncrypt(validPassword)
+
 
 #\/this is how many chances the user has before the countdown starts.
 maxTries = 6
