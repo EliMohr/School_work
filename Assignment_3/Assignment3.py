@@ -12,7 +12,7 @@ def passwordEncrypt(password):
     alphabetList = []
     for character in alphabet:
         alphabetList.append(character)
-    print(password.replace(alphabetList[12], alphabetList[21]))
+    print(password.replace(alphabetList[1], alphabetList[21]))
 #\/this is asking the user to input a new password.        
 NewPassword = input("Enter a new password: ")
 validPassword = NewPassword
