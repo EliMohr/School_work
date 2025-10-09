@@ -3,7 +3,7 @@
 import time
 
 #\/this is saying what the password is.
-validPassword = "JimmyJohns123"
+#validPassword = "JimmyJohns123"
 
 #encrypts the password
 def passwordEncrypt(password):
@@ -12,11 +12,11 @@ def passwordEncrypt(password):
     alphabetList = []
     for character in alphabet:
         alphabetList.append(character)
-    print(password.replace(alphabetList[12], alphabetList[13]))
-
+    print(password.replace(alphabetList[12], alphabetList[21]))
+#\/this is asking the user to input a new password.        
+NewPassword = input("Enter a new password: ")
+validPassword = NewPassword
 passwordEncrypt(validPassword)
-        
-
 
 #\/this is how many chances the user has before the countdown starts.
 maxTries = 6
