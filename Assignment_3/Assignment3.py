@@ -12,11 +12,13 @@ def passwordEncrypt(password):
     alphabetList = []
     for character in alphabet:
         alphabetList.append(character)
-    print(password.replace(alphabetList[1], alphabetList[21]))
+    return (password.replace(alphabetList[1], alphabetList[21]))
+
 #\/this is asking the user to input a new password.        
-NewPassword = input("Enter a new password: ")
-validPassword = NewPassword
-passwordEncrypt(validPassword)
+newPassword = input("Enter a new password: ")
+validPassword = newPassword
+encryptedPassword = passwordEncrypt(validPassword)
+print(encryptedPassword)
 
 
 #\/this is how many chances the user has before the countdown starts.
