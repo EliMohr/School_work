@@ -6,4 +6,11 @@ noun2 = input ("Give me another noun:  ")
 adjective1 = input ("Give me an adjective:  ")
 adjective2 = input ("Give me another adjective:  ")
 
+
 userWords = [verb1, verb2, noun1, noun2, adjective1, adjective2]
+
+
+for word in userWords:
+    print(word)
+
+theStory = "A luminous lantern let a tired traveler wander silently."
