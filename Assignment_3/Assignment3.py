@@ -8,17 +8,27 @@ import os
 #encrypts the password
 def passwordEncrypt(password):
     import string
-    alphabet = string.ascii_lowercase + " "
+    alphabet = string.ascii_lowercase + " " + string.ascii_uppercase
+    number = string.digits
     alphabetList = []
+    for character in number:
+        alphabetList.append(character)
     for character in alphabet:
         alphabetList.append(character)
-<<<<<<< HEAD
-    return (password.replace(alphabetList[1], alphabetList[21]))
+        #\/ this stuff down here is made by AI
+    # number[1] is '1' and number[9] is '9' (digits string is '0123456789')
+    # build a lowercase-only list so 'first letter' means index 0 -> 'a'
+    lowercase = list(string.ascii_lowercase)  # ['a','b',...,'z']
+    # lowercase[0] is the first letter 'a', lowercase[20] is the 21st letter 'u'
+    # replace digit '1' with '9' and first lowercase letter with the 21st lowercase
+    
+    #\/ now this is me
+    uppercase = list(string.ascii_uppercase)
+    return password.replace(number[1], number[9]).replace(lowercase[0], lowercase[20]).replace(uppercase[0], uppercase[20])
+    #return (password.replace(alphabetList[1], alphabetList[21]))
+    
+    #/\ AI did that I did add the uppercase part though 
 
-=======
-    print(password.replace(alphabetList[1], alphabetList[26]))
->>>>>>> bee3aa754ef6e5f1eb2f3d90edc67a2f2beeb138
-#\/this is asking the user to input a new password.        
 newPassword = input("Enter a new password: ")
 validPassword = newPassword
 encryptedPassword = passwordEncrypt(validPassword)
