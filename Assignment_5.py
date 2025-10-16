@@ -1,8 +1,9 @@
 #Collecting words from the user
-txtFile = open("UserWords.txt", "w")
+txtFile = open("UserWords.txt", "a")
 
 verb1 = input ("Give me a verb:  ")
 txtFile.write(verb1)
+txtFile.close()
 verb2 = input ("Give me another verb:  ")
 #txtFile.write(verb2)
 noun1 = input ("Give me a noun:  ")
@@ -14,6 +15,7 @@ adjective1 = input ("Give me an adjective:  ")
 adjective2 = input ("Give me another adjective:  ")
 #txtFile.write(adjective2)
 
+#txtFile.close()
 
 userWords = [verb1, verb2, noun1, noun2, adjective1, adjective2]
 #txtFile.write(str(userWords))
