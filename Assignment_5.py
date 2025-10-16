@@ -16,7 +16,7 @@ adjective2 = input ("Give me another adjective:  ")
 
 
 userWords = [verb1, verb2, noun1, noun2, adjective1, adjective2]
-
+#txtFile.write(str(userWords))
 text = "A luminous lantern let a tired traveler wander silently."
 
 new_text = text.replace("luminous", userWords[4])
