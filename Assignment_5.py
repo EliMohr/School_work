@@ -36,9 +36,11 @@ print (new_text)
 #get the old words from the last time the user used our adlib app
 with open("UserWords.txt", "r") as txtFile:
     lines = txtFile.readlines()
-    
+
+lines = [line.strip() for line in lines]
+
 for line in lines:
-    print(line)
+    print(line.strip())
 
 #Insert our old words into the adlib
 print("Here is the old story without your new words:")
