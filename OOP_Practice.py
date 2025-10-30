@@ -4,6 +4,10 @@ class MyClass():
         self.CourseCode = CourseCode
         self.Section = Section
         self.Objectives = Objectives
+    
+    def compareObjectives(self):
+        for Objective in self.Objectives:
+            print(Objective)
 
 courseA = MyClass("Intro to Coding", "INFO 1020", 7, Objectives = [
     "Explain the role of quality assurance testing in software development.",
@@ -12,10 +16,17 @@ courseA = MyClass("Intro to Coding", "INFO 1020", 7, Objectives = [
     "Recognize the verification and validation processes in software testing.",
     "Identify approaches to designing a test case."
 ])
-courseB = MyClass("Painting Basics", "ART201", 2, Objectives = [
-    "Understand color theory and its application in painting.",
-    "Explore different painting techniques and mediums.",
-    "Develop skills in composition and design."
+courseB = MyClass("Fund. of Software Testing", "INFO 2341", 3, Objectives = [
+    "Design and evaluate computational solutions for a purpose.",
+    "Develop and implement algorithms.",
+    "Develop programs that incorporate abstractions.",
+    "Evaluate and test algorithms and programs.",
+    "Investigate computing innovations.",
+    "Implement common and advanced modularization techniques in computer programs.",
+    "Apply data handling concepts, including datatype selection.",
+    "Describe the Object-Oriented Programming paradigm.",
+    "Collaborate with others on a software project.",
+    "Identify bugs in existing code and update the code to apply fixes and new features."
 ])
 
 print(courseA.Name, courseA.CourseCode, courseA.Section, courseA.Objectives[3])
