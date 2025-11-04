@@ -68,15 +68,31 @@ courseD = MyClass("Art History", "ART 1010", 1, Objectives = [
     "Develop critical thinking skills through the study of art.",
     "Explore the relationship between art and culture."
 ])
-CourseE = MyClass("Introduction to Art", "ART 1001", 1, Objectives = [
+courseE = MyClass("Introduction to Art", "ART 1001", 1, Objectives = [
     "Understand basic art concepts and terminology.",
     "Identify different art styles and movements.",
     "Develop foundational skills in various art techniques.",
     "Appreciate the role of art in society and culture."
 ])
-codingCourse = courseA, courseB, courseC
+courseF = MyClass("Advanced Art Techniques", "ART 2010", 2, Objectives = [
+    "Master advanced techniques in painting, sculpture, and digital art.",
+    "Experiment with mixed media and contemporary art forms.",
+   "Develop a personal artistic style and portfolio."
+])
 
+codingCourse = courseA, courseB, courseC
+artCourse = courseD, courseE, courseF
 UserSelection = 
+
+
+
+
+#Left off here /\ I was making it so the user could pick the course they wanted to look at and compare.
+
+
+
+
+
 
 print("Here are the courses you can choose from:")
 print("-----------------------------------------")
