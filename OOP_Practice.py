@@ -1,3 +1,11 @@
+print("Which of the following is your main study?")
+print("1. Coding")
+print("2. Art")
+print("3. Architecture")
+print("4. Baking")
+input("Enter the number of your choice: ")
+
+
 class MyClass():
     def __init__(self, Name, CourseCode, Section, Objectives):
         self.Name = Name
@@ -53,11 +61,26 @@ courseC = MyClass("Data Structures", "INFO 2020", 2, Objectives = [
     "Utilize recursion in data structure implementations.", "Making unique objectives with code", "Working with Data",
     "Understanding basics of programming and how it works with data"
 ])
+courseD = MyClass("Art History", "ART 1010", 1, Objectives = [
+    "Understand the historical context of major art movements.",
+    "Analyze and interpret various forms of visual art.",
+    "Recognize the contributions of key artists throughout history.",
+    "Develop critical thinking skills through the study of art.",
+    "Explore the relationship between art and culture."
+])
+CourseE = MyClass("Introduction to Art", "ART 1001", 1, Objectives = [
+    "Understand basic art concepts and terminology.",
+    "Identify different art styles and movements.",
+    "Develop foundational skills in various art techniques.",
+    "Appreciate the role of art in society and culture."
+])
+codingCourse = courseA, courseB, courseC
 
+UserSelection = 
 
 print("Here are the courses you can choose from:")
 print("-----------------------------------------")
-print(courseA.Name, courseA.CourseCode, courseA.Objectives)
+print(UserSelection.Name, UserSelection.CourseCode, UserSelection.Objectives)
 print("-----------------------------------------")  
 print(courseB.Name, courseB.CourseCode, courseB.Objectives)
 print("-----------------------------------------")
