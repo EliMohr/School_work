@@ -23,6 +23,7 @@ class MyClass():
             print("No common objectives.")
         return common
 
+
 courseA = MyClass("Intro to Coding", "INFO 1020", 7, Objectives = [
     "Explain the role of quality assurance testing in software development.",
     "Describe the levels of testing software.",
@@ -53,6 +54,7 @@ courseC = MyClass("Data Structures", "INFO 2020", 2, Objectives = [
     "Understanding basics of programming and how it works with data"
 ])
 
+
 print("Here are the courses you can choose from:")
 print("-----------------------------------------")
 print(courseA.Name, courseA.CourseCode, courseA.Objectives)
@@ -77,3 +79,6 @@ print("-----------------------------------------")
 courseA.compareWithOtherCourse(courseC)
 print("-----------------------------------------")
 courseB.compareWithOtherCourse(courseC)
+print("-----------------------------------------")
+courseC.compareWithOtherCourse(courseB)
+print("-----------------------------------------")
