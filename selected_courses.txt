@@ -1,0 +1,11 @@
+Selected Architecture Courses:
+-----------------------------------------
+Intro to Architecture | ARCH 1010 | Section 1
+Objectives: ['Apply fundamental design principles.', 'Identify major architectural styles and periods.', 'Explain the role of form, function, and context in the built environment.']
+-----------------------------------------
+Architectural Drawing & Modeling | ARCH 1200 | Section 1
+Objectives: ['Apply fundamental design principles.', 'Produce basic orthographic and isometric drawings.', 'Create simple 3D models to communicate design intent.']
+-----------------------------------------
+Sustainable Architecture | ARCH 2100 | Section 2
+Objectives: ['Apply fundamental design principles.', 'Evaluate materials and systems for energy efficiency.', 'Incorporate passive design strategies into conceptual proposals.']
+-----------------------------------------
