@@ -4,6 +4,7 @@ print("2. Art")
 print("3. Architecture")
 print("4. Baking")
 #input("Enter the number of your choice: ")
+print("-----------------------------------------")
 
 
 class MyClass():
@@ -149,12 +150,7 @@ else:
     print("-----------------------------------------")
     for c in selected_list:
         print(f"{c.Name} | {c.CourseCode} | Section {c.Section}")
-        # If you want objectives too, uncomment:
-        # print("Objectives:", c.Objectives)
-        # print("-----------------------------------------")
-
-
-
+        
 
 
 #Left off here /\ I was making it so the user could pick the course they wanted to look at and compare.
