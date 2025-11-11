@@ -1,30 +1,35 @@
+# show menu
 print("Which of the following is your main study?")
 print("1. Coding")
 print("2. Art")
 print("3. Architecture")
 print("4. Baking")
-#input("Enter the number of your choice: ")
+# input was here before. leaving it off on purpose.
 print("-----------------------------------------")
 
-
+# make a simple class for courses
 class MyClass():
     def __init__(self, Name, CourseCode, Section, Objectives):
+        # store stuff
         self.Name = Name
         self.CourseCode = CourseCode
         self.Section = Section
         self.Objectives = Objectives
     
     def compareObjectives(self):
+        # print each objective
         for Objective in self.Objectives:
             print(Objective)
 
     def compareWithOtherCourse(self, otherCourse):
+        # find common objectives the slow way
         common = []
         for obj in self.Objectives:
             for other_obj in otherCourse.Objectives:
                 if obj == other_obj:
                     common.append(obj)
 
+        # show what matches
         print(f"Comparing '{self.Name}' with '{otherCourse.Name}':")
         if common:
             print(f"Common objectives: {common}")
@@ -32,7 +37,7 @@ class MyClass():
             print("No common objectives.")
         return common
 
-
+# coding courses. just data.
 courseA = MyClass("Intro to Coding", "INFO 1020", 7, Objectives = [
     "Explain the role of quality assurance testing in software development.",
     "Describe the levels of testing software.",
@@ -62,6 +67,8 @@ courseC = MyClass("Data Structures", "INFO 2020", 2, Objectives = [
     "Utilize recursion in data structure implementations.", "Making unique objectives with code", "Working with Data",
     "Understanding basics of programming and how it works with data"
 ])
+
+# art courses. also just data.
 courseD = MyClass("Art History", "ART 1010", 1, Objectives = [
     "Understand the historical context of major art movements.",
     "Analyze and interpret various forms of visual art.",
@@ -82,8 +89,8 @@ courseF = MyClass("Advanced Art Techniques", "ART 2010", 2, Objectives = [
 ])
 
 # ------------------------------------------------------------
-# Architecture courses (all share at least one common objective)
-# Common objective across Architecture: "Apply fundamental design principles."
+# architecture courses. share one goal. still data.
+# common: "Apply fundamental design principles."
 courseG = MyClass("Intro to Architecture", "ARCH 1010", 1, Objectives = [
     "Apply fundamental design principles.",
     "Identify major architectural styles and periods.",
@@ -103,8 +110,8 @@ courseI = MyClass("Sustainable Architecture", "ARCH 2100", 2, Objectives = [
 ])
 
 # ------------------------------------------------------------
-# Baking courses (all share at least one common objective)
-# Common objective across Baking: "Practice kitchen safety and sanitation."
+# baking courses. also share one goal. still data.
+# common: "Practice kitchen safety and sanitation."
 courseJ = MyClass("Baking Fundamentals", "BAKE 1001", 1, Objectives = [
     "Practice kitchen safety and sanitation.",
     "Measure and scale ingredients accurately.",
@@ -123,16 +130,16 @@ courseL = MyClass("Artisan Breads", "BAKE 2100", 2, Objectives = [
     "Shape and score loaves for optimal oven spring and crust."
 ])
 
-
+# make lists for each focus
 coding_courses = [courseA, courseB, courseC]
 art_courses = [courseD, courseE, courseF]
-architecture_courses = [courseG, courseH, courseI]  # Architecture focus
-baking_courses = [courseJ, courseK, courseL]         # Baking focus
+architecture_courses = [courseG, courseH, courseI]
+baking_courses = [courseJ, courseK, courseL]
 
-#Read the user's focus selection
+# read user pick 1-4
 choice = input("Enter the number of your choice: ").strip()
 
-#Map choice -> list of courses
+# map pick to (name, list)
 focus_map = {
     "1": ("Coding", coding_courses),
     "2": ("Art", art_courses),
@@ -140,38 +147,30 @@ focus_map = {
     "4": ("Baking", baking_courses),
 }
 
+# get the chosen list
 focus_name, selected_list = focus_map.get(choice, (None, None))
 
 if not selected_list:
+    # bad pick
     print("No courses available for that selection (or invalid choice).")
 else:
-    #Display the selected courses
+    # show the courses
     print(f"\nHere are the {focus_name} courses you can choose from:")
     print("-----------------------------------------")
     for c in selected_list:
         print(f"{c.Name} | {c.CourseCode} | Section {c.Section}")
-        
 
+# left off note. just keeping it.
+# user pick and compare later maybe.
 
-#Left off here /\ I was making it so the user could pick the course they wanted to look at and compare.
-
-
-
-
-
-
-#print("Here are the courses you can choose from:")
-#print("-----------------------------------------")
-#print(UserSelection.Name, UserSelection.CourseCode, UserSelection.Objectives)
-#print("-----------------------------------------")  
-#print(courseB.Name, courseB.CourseCode, courseB.Objectives)
-#print("-----------------------------------------")
-#print(courseC.Name, courseC.CourseCode, courseC.Objectives)
+# old prints. keeping them off.
 print("-----------------------------------------")
 print("would you like to compare the objectives of these courses?")
 input("Press Enter to continue...")
 print("-----------------------------------------") 
 
+# compare all pairs for the chosen focus, hardcoded paths
+# yeah it's long, but simple
 if choice == "1":
     courseA.compareWithOtherCourse(courseB)
     print("-----------------------------------------")
@@ -201,17 +200,58 @@ elif choice == "4":
     courseK.compareWithOtherCourse(courseL)
     print("-----------------------------------------")
 else:
+    # nothing to compare
     print("No courses to compare in this category.")
 
+# ask about completed courses, simple 1/2
+print("-----------------------------------------")
+print("have you completed any of these courses?")
+print("1. yes")
+print("2. no")
+completed_choice = input("enter 1 or 2: ").strip()
+
+if completed_choice == "1":
+    # get codes from user
+    print("which ones")
+    # example: INFO 1020, INFO 2341
+    completed_codes = input("enter course codes with commas: ").split(",")
+    # trim spaces
+    completed_codes = [x.strip() for x in completed_codes if x.strip()]
+    # show matches only
+    print("you completed:")
+    for c in selected_list:
+        if c.CourseCode in completed_codes:
+            print(f"{c.Name} | {c.CourseCode} | Section {c.Section}")
+    with open("completed_courses.txt", "w") as f:
+        f.write("Completed Courses:\n")
+        f.write("-----------------------------------------\n")
+        for c in selected_list:
+            if c.CourseCode in completed_codes:
+                f.write(f"{c.Name} | {c.CourseCode} | Section {c.Section}\n")
+                f.write(f"Objectives: {c.Objectives}\n")
+                f.write("-----------------------------------------\n")
+    print("completed courses saved to 'completed_courses.txt'")
+elif completed_choice == "2":
+    # nothing done
+    print("ok. none.")
+else:
+    # bad pick
+    print("not a valid pick")
+
+
+# save selected list to a file. simple write.
+print("-----------------------------------------")
 print("would you like to save these courses to a file?")
 input("Press Enter to continue...")
 
 with open("selected_courses.txt", "w") as f:
+    # header
     f.write(f"Selected {focus_name} Courses:\n")
     f.write("-----------------------------------------\n")
+    # each course
     for c in selected_list:
         f.write(f"{c.Name} | {c.CourseCode} | Section {c.Section}\n")
         f.write(f"Objectives: {c.Objectives}\n")
         f.write("-----------------------------------------\n")
 
-
+print("courses saved to 'selected_courses.txt'")
